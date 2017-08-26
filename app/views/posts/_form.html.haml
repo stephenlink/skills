@@ -1,0 +1,6 @@
+.form-wrapper
+  = simple_form_for @post, html: { class: 'form-horizontal', multipart: true } do |f|
+    .form-group.text-center
+      = f.input :skill
+    .form-group.text-center
+      = f.button :submit, 'Add New Skill', class: 'btn-success'

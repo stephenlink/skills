@@ -1,0 +1,155 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+body {
+  background-color: #fafafa;
+  font-family: proxima-nova, 'Helvetica Neue', Arial, Helvetica, sans-serif;
+}
+
+html {
+  height: 100%;
+}
+
+.registration-bg {
+  padding-top: 4em;
+  height: 100%;
+  background-image: image-url('regbackg.jpg');
+  -moz-background-size: cover;
+  -webkit-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.profile-header {
+  padding: 20px 0;
+}
+
+.profile-image {
+  margin: 20px auto;
+  height: 152px;
+  width: 152px;
+}
+
+.user-name-and-follow {
+  display: inline;
+}
+
+.profile-user-name {
+  display: inline;
+}
+
+.edit-button {
+  border-color: #818488;
+  color: #818488;
+  margin-left: 20px;
+}
+
+.profile-bio {
+  margin-top: 20px;
+}
+
+.log-in{
+  margin-left: auto;
+  margin-right: auto;
+  text-align:center;
+  border: none;
+}
+
+#user_avatar {
+  margin: 20px auto;
+}
+
+.panel {
+  border-radius: 8px;
+}
+
+.panel-heading{
+  h1 {
+    text-align: center;
+  }
+}
+
+.login-bg {
+  padding-top: 4em;
+  height: 100%;
+  background-image: image-url('loginbg.jpg');
+  -moz-background-size: cover;
+  -webkit-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.navbar {
+  margin-bottom: 0px;
+}
+
+.alert {
+  margin-bottom: 0px;
+}
+
+
+.navbar-brand {
+  a {
+    color: #125688;
+  }
+}
+
+.navbar-default {
+  background-color: #fff;
+  height: 54px;
+  .navbar-nav li a {
+    color: #125688;
+  }
+}
+
+.navbar-container {
+  width: 640px;
+  margin: 0 auto;
+}
+
+.posts-wrapper {
+  padding-top: 40px;
+  margin: 0 auto;
+  max-width: 642px;
+  width: 100%;
+}
+
+.post {
+  background-color: #fff;
+  border-color: #edeeee;
+  border-style: solid;
+  border-radius: 3px;
+  border-width: 1px;
+  margin-bottom: 0px;
+}
+
+.post-head {
+  height: 5px;
+  padding: 8px 4px;
+  color: #125688;
+  font-size: 15px;
+  line-height: 4px;
+  .thumbnail {}
+  .name {
+    display: block;
+  }
+}
+
+
+.skill {
+  padding: 8px 4px;
+  font-size: 20px;
+  line-height: 18px;
+}
+
+.form-wrapper {
+  width: 60%;
+  margin: 20px auto;
+  background-color: #fff;
+  padding: 40px;
+}
+
+.edit-links {
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
