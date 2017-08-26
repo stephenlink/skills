@@ -16,5 +16,10 @@
       .user-statistics
         %p
           = pluralize @user.posts.count, 'skills'
+      .new-skill
+        %span
+          - if @user == current_user
+            = link_to "Add New Skill (+)", new_post_path
+
 -@posts.each do |post|
   = render 'posts/post', post: post
