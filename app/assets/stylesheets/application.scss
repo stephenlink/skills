@@ -117,8 +117,7 @@ html {
 .post {
   background-color: #fff;
   border-color: #edeeee;
-  border-style: solid;
-  border-radius: 3px;
+  border-radius: 0px;
   border-width: 1px;
   margin-bottom: 0px;
 }
@@ -133,6 +132,23 @@ html {
   .name {
     display: block;
   }
+}
+
+.post-bottom {
+  margin-bottom: 7px;
+  padding-left: 4px;
+  padding-right: 24px;
+  padding-bottom: 15px;
+  font-size: 15px;
+  line-height: 18px;
+}
+
+.reccomend {
+  padding-left: 580px;
+  padding-right: 24px;
+  padding-bottom: -10px;
+  font-size: 20px;
+  line-height: 18px;
 }
 
 

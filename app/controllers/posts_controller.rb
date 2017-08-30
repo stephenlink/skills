@@ -1,10 +1,10 @@
 class PostsController < ApplicationController
 
 	before_action :authenticate_user!
-	before_action :set_post, only: [:destroy]
+	before_action :set_post, only: [:like, :destroy]
 
 	def index 
-		@posts = Post.all
+		@posts = Post.all.order('created_at DESC')
 	end
 
 	def new 
@@ -17,9 +17,9 @@ class PostsController < ApplicationController
 
         if @post.save
           flash[:success] = "Your post has been created!"
-          redirect_to posts_path
+          redirect_to profile_path(current_user.user_name)
         else
-          flash[:alert] = "Your new post couldn't be created!  Please check the form."
+          flash[:alert] = "New post couldn't be created"
           render :new
         end
 	end
@@ -27,6 +27,19 @@ class PostsController < ApplicationController
 	def destroy
 		@post.destroy
 		redirect_to root_path
+	end
+
+	def like
+	  if @post.user == current_user
+	  #cant reccomend your own post!
+	  else 
+	    if @post.liked_by current_user
+          respond_to do |format|
+            format.html { redirect_to :back }
+            format.js
+          end
+        end
+      end
 	end
 
 	private

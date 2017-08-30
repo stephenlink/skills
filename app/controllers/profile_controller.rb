@@ -1,10 +1,12 @@
 class ProfileController < ApplicationController
   before_action :set
-  before_action :owned_profile, only: [:edit, :update]
+  before_action :own_profile, only: [:edit, :update]
+
+
  
   def show
   	#@user = User.find_by(user_name: params[:user_name])
-  	@posts = User.find_by(user_name: params[:user_name]).posts.order('created_at DESC')
+  	@posts = User.find_by(user_name: params[:user_name]).posts.order(:cached_votes_up => :desc)
   end
 
   def edit
