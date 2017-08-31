@@ -15,10 +15,17 @@ class ProfileController < ApplicationController
   	@post = User.find_by(user_name: params[:user_name]).posts.build(post_params)
 
     if @post.save
-      flash[:success] = "Your post has been created!"
-      redirect_to profile_path(@post.user.user_name)
+      #reccomend the post
+      if @post.liked_by current_user
+        respond_to do |format|
+          format.html { redirect_to profile_path(@post.user.user_name) }
+          format.js
+          end
+      end
+      flash[:success] = "The new skill has been added!"
+      #redirect_to profile_path(@post.user.user_name)
     else
-      flash[:alert] = "New post couldn't be created"
+      flash[:alert] = "The new skill couldn't be created :("
       render :new
     end
   end
