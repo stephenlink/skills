@@ -22,7 +22,12 @@ The app is also live on Heroku at:
 https://your-skills.herokuapp.com
 
 Gems used:
+
 Devise
+
 Paperclip
+
 Bootstrap
+
 Simple form
+
