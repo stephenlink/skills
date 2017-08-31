@@ -20,6 +20,9 @@
         %span
           - if @user == current_user
             = link_to "Add New Skill (+)", new_post_path
+          - else
+            = link_to "Add New Skill For This User (+)", recommend_post_path
+
 
 -@posts.each do |post|
   = render 'posts/post', post: post

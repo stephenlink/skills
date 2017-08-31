@@ -1,13 +1,28 @@
 class ProfileController < ApplicationController
   before_action :set
   before_action :own_profile, only: [:edit, :update]
-
-
  
   def show
   	#@user = User.find_by(user_name: params[:user_name])
   	@posts = User.find_by(user_name: params[:user_name]).posts.order(:cached_votes_up => :desc)
   end
+
+  def new
+  	@post = User.find_by(user_name: params[:user_name]).posts.build
+  end
+
+  def build
+  	@post = User.find_by(user_name: params[:user_name]).posts.build(post_params)
+
+    if @post.save
+      flash[:success] = "Your post has been created!"
+      redirect_to profile_path(@post.user.user_name)
+    else
+      flash[:alert] = "New post couldn't be created"
+      render :new
+    end
+  end
+
 
   def edit
     #@user = User.find_by(user_name: params[:user_name])
@@ -43,6 +58,10 @@ class ProfileController < ApplicationController
 
   def set
   	@user = User.find_by(user_name: params[:user_name])
+  end
+
+  def post_params
+    params.require(:post).permit(:skill)
   end
 
 end

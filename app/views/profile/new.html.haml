@@ -1,0 +1,6 @@
+.form-wrapper
+  = simple_form_for @post, url: recommend_build_path, html: { class: 'form-horizontal', multipart: true } do |f|
+    .form-group.text-center
+      = f.input :skill
+    .form-group.text-center
+      = f.button :submit, 'Add New Skill For This User', class: 'btn-success'
